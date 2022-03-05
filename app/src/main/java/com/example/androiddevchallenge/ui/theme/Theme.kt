@@ -20,40 +20,46 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorPalette = darkColors(
-    primary = purple200,
-    primaryVariant = purple700,
-    secondary = teal200
-)
+object MySootheTheme {
+    val DarkColorPalette = darkColors(
+        primary = Color.White,
+        secondary = Color.Rust300,
+        background = Color.Gray900,
+        surface = Color.White.copy(alpha = 0.15f),
+        onPrimary = Color.Gray900,
+        onSecondary = Color.Gray900,
+        onBackground = Color.Taupe100,
+        onSurface = Color.White.copy(alpha = 0.8f)
+    )
 
-private val LightColorPalette = lightColors(
-    primary = purple500,
-    primaryVariant = purple700,
-    secondary = teal200
+    val LightColorPalette = lightColors(
 
-        /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
-)
+        primary = Color.Gray900,
+        secondary = Color.Rust600,
+        background = Color.Taupe100,
+        surface = Color.White.copy(alpha = 0.8f),
+        onPrimary = Color.White,
+        onSecondary = Color.White,
+        onBackground = Color.Taupe800,
+        onSurface = Color.Gray900.copy(alpha = 0.8f)
+    )
+}
+
 
 @Composable
-fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun MySootheTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
     val colors = if (darkTheme) {
-        DarkColorPalette
+        MySootheTheme.DarkColorPalette
     } else {
-        LightColorPalette
+        MySootheTheme.LightColorPalette
     }
 
     MaterialTheme(
         colors = colors,
-        typography = typography,
-        shapes = shapes,
+        typography = MySootheTheme.typography,
+        shapes = MySootheTheme.shapes,
         content = content
     )
 }
