@@ -4,16 +4,19 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.example.androiddevchallenge"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     signingConfigs {
@@ -64,10 +67,10 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.3.0-beta01'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation "androidx.activity:activity-compose:1.3.0-alpha04"
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0-alpha01'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation "androidx.activity:activity-compose:1.5.0-alpha03"
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
@@ -76,6 +79,15 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+
+    implementation "com.google.accompanist:accompanist-insets:0.10.0"
+
+    def nav_version = "2.4.1"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    implementation("io.coil-kt:coil-compose:2.0.0-rc01")
+
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0"
 }

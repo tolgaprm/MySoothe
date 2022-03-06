@@ -10,4 +10,7 @@
       the License.
       -->
     <string name="app_name">My Soothe</string>
+    <string name="welcome_logo">Logo</string>
+    <string name="welcome_signup">Sign Up</string>
+    <string name="welcome_login">Log in</string>
 </resources>
