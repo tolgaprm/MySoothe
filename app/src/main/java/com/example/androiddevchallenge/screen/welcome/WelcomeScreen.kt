@@ -2,6 +2,7 @@ package com.example.androiddevchallenge.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -9,6 +10,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.androiddevchallenge.R
@@ -49,10 +54,16 @@ fun WelcomeScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            MySootheButtonVersion2(onClick = { /*TODO*/ }) {
-                Text(text = stringResource(R.string.welcome_login).uppercase())
-
+            MySootheButtonVersion2(onClick = {
+                navController.navigate(Screen.Login.route)
+            }) {
+                Text(
+                    text = stringResource(R.string.welcome_login).uppercase(),
+                    style = MaterialTheme.typography.button
+                )
             }
+
+
 
 
         }

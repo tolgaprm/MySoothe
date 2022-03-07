@@ -13,4 +13,11 @@
     <string name="welcome_logo">Logo</string>
     <string name="welcome_signup">Sign Up</string>
     <string name="welcome_login">Log in</string>
+    <string name="login">LOG IN</string>
+    <string name="login_email">Email address</string>
+    <string name="login_password">Password</string>
+    <string name="login_dont_have_account">Don\'t have an account?</string>
+    <string name="login_sign_up">Sign Up</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="invalid_password">Password length should be greater than 8</string>
 </resources>

@@ -18,9 +18,7 @@ fun MySootheApp() {
 
 @Composable
 fun Navigation() {
-    val navController = rememberNavController(
-
-    )
+    val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.Welcome.route) {
 
         composable(Screen.Welcome.route) {

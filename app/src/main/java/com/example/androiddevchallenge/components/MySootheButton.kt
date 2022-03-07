@@ -19,13 +19,14 @@ fun MySootheButton(
     content: @Composable RowScope.() -> Unit
 ) {
 
+
     Button(
         onClick = onClick,
         modifier = modifier
             .height(72.dp)
             .fillMaxSize(),
         shape = MaterialTheme.shapes.medium,
-        content = content
+        content = content,
     )
 }
 
@@ -56,7 +57,7 @@ fun MySootheButtonTheme(
 ) {
 
     val colors = if (darkTheme) {
-       MySootheTheme.DarkColorPalette.copy(
+        MySootheTheme.DarkColorPalette.copy(
             primary = Color.Rust300
         )
     } else {

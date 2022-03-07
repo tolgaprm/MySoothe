@@ -61,13 +61,13 @@ val MySootheTheme.typography
             fontSize = 14.sp,
             letterSpacing = 0.sp
         ),
-        button =  TextStyle(
+        button = TextStyle(
             fontFamily = FontFamily.Lato,
             fontWeight = FontWeight.Bold,
             fontSize = 14.sp,
             letterSpacing = 1.15.sp
         ),
-        caption =  TextStyle(
+        caption = TextStyle(
             fontWeight = FontWeight.Normal,
             fontSize = 12.sp,
             letterSpacing = 1.15.sp
