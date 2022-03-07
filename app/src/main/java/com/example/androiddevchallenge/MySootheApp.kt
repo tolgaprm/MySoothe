@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.screen.Screen
 import com.example.androiddevchallenge.screen.WelcomeScreen
+import com.example.androiddevchallenge.screen.home.HomeScreen
 import com.example.androiddevchallenge.screen.login.Login
 import com.google.accompanist.insets.ProvideWindowInsets
 
@@ -27,6 +28,10 @@ fun Navigation() {
 
         composable(Screen.Login.route) {
             Login(navController = navController)
+        }
+        
+        composable(Screen.Home.route){
+            HomeScreen(navController = navController)
         }
     }
 
