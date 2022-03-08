@@ -1,5 +1,6 @@
 package com.example.androiddevchallenge.screen.login
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
@@ -14,6 +15,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -62,14 +64,14 @@ fun Login(
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
                 isError = loginViewModel.loginState.value.isEmailError
             )
-            if (loginViewModel.loginState.value.isEmailError) {
+            AnimatedVisibility(visible = loginViewModel.loginState.value.isEmailError) {
                 Text(
                     text = stringResource(R.string.invalid_email),
                     color = MaterialTheme.colors.error,
                     modifier = Modifier.padding(top = 8.dp)
                 )
-
             }
+
 
             Spacer(modifier = Modifier.height(8.dp))
 
@@ -79,9 +81,10 @@ fun Login(
                 onValueChange = { loginViewModel.onChangePassword(it) },
                 placeholder = { Text(text = stringResource(R.string.login_password)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                isError = loginViewModel.loginState.value.isPasswordError
+                isError = loginViewModel.loginState.value.isPasswordError,
+                visualTransformation = PasswordVisualTransformation()
             )
-            if (loginViewModel.loginState.value.isPasswordError) {
+            AnimatedVisibility(visible = loginViewModel.loginState.value.isPasswordError) {
                 Text(
                     text = stringResource(R.string.invalid_password),
                     color = MaterialTheme.colors.error,
@@ -89,12 +92,17 @@ fun Login(
                 )
             }
 
+
             Spacer(modifier = Modifier.height(8.dp))
 
             MySootheButton(onClick = {
                 loginViewModel.onClickedLoginButton()
                 if (loginViewModel.navigateToHome.value) {
-                    navController.navigate(Screen.Home.route)
+                    navController.navigate(Screen.Home.route) {
+                        popUpTo(Screen.Welcome.route) {
+                            inclusive = true
+                        }
+                    }
                     loginViewModel.displayedHomeScreen()
                 }
             }) {
