@@ -20,4 +20,8 @@
     <string name="login_sign_up">Sign Up</string>
     <string name="invalid_email">Invalid Email</string>
     <string name="invalid_password">Password length should be greater than 8</string>
+    <string name="nav_home_label">HOME</string>
+    <string name="nav_profile_label">PROFILE</string>
+    <string name="home_search">Search</string>
+    <string name="home_fav_collect">Favorite Collections</string>
 </resources>
