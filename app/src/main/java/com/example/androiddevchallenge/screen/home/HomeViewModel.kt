@@ -3,7 +3,8 @@ package com.example.androiddevchallenge.screen.home
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.androiddevchallenge.data.Collection
+import com.example.androiddevchallenge.data.alignYourBodyCollections
+import com.example.androiddevchallenge.data.alignYourMindCollections
 import com.example.androiddevchallenge.data.favoriteCollectionsOne
 import com.example.androiddevchallenge.data.favoriteCollectionsTwo
 
@@ -16,9 +17,14 @@ class HomeViewModel : ViewModel() {
     init {
         val favoriteList = favoriteCollectionsOne
         val favoriteListTwo = favoriteCollectionsTwo
+        val alignYourBodyCollectionsList = alignYourBodyCollections
+        val alignYourMindCollectionList = alignYourMindCollections
+
         _homeViewState.value = _homeViewState.value.copy(
             favoriteListOne = favoriteList,
-            favoriteListTwo = favoriteListTwo
+            favoriteListTwo = favoriteListTwo,
+            alignYourBodyCollections = alignYourBodyCollections,
+            alignYourMindCollections = alignYourMindCollections
         )
     }
 

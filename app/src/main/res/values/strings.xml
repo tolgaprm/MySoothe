@@ -23,5 +23,8 @@
     <string name="nav_home_label">HOME</string>
     <string name="nav_profile_label">PROFILE</string>
     <string name="home_search">Search</string>
+
     <string name="home_fav_collect">Favorite Collections</string>
+    <string name="home_align_your_body">Align Your Body</string>
+    <string name="home_align_your_mind">Align Your Mind</string>
 </resources>

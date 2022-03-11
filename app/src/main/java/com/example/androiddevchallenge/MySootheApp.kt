@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.androiddevchallenge.components.FloatingActionButtonTheme
 import com.example.androiddevchallenge.screen.Screen
 import com.example.androiddevchallenge.screen.WelcomeScreen
 import com.example.androiddevchallenge.screen.bottomNav.BottomNavItem
@@ -93,9 +94,12 @@ fun MySootheApp() {
 @Composable
 fun FloatingActionButton() {
 
-    FloatingActionButton(onClick = { /*TODO*/ }) {
-        Icon(imageVector = Icons.Filled.PlayArrow, contentDescription = null)
+    FloatingActionButtonTheme {
+        FloatingActionButton(onClick = { /*TODO*/ }) {
+            Icon(imageVector = Icons.Filled.PlayArrow, contentDescription = null)
+        }
     }
+
 
 }
 
